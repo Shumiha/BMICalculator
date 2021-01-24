@@ -5,11 +5,18 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+/**
+ * @author mtimoshkevich
+ */
+
 public class BMICalculatorTest {
+
+    public static final String URL = "https://healthunify.com/bmicalculator/";
+    public static final String WEIGHT = "65";
     @Test
     public void testObese1(){
-        open("https://healthunify.com/bmicalculator/");
-        $(By.name("wg")).sendKeys("65");
+        open(URL);
+        $(By.name("wg")).sendKeys(WEIGHT);
         $(By.name("ht")).sendKeys("33");
         $(By.name("cc")).click();
         String result = $(By.name("desc")).getAttribute("value");
@@ -18,8 +25,8 @@ public class BMICalculatorTest {
 
     @Test
     public void testObese2(){
-        open("https://healthunify.com/bmicalculator/");
-        $(By.name("wg")).sendKeys("65");
+        open(URL);
+        $(By.name("wg")).sendKeys(WEIGHT);
         $(By.name("ht")).sendKeys("147");
         $(By.name("cc")).click();
         String result = $(By.name("desc")).getAttribute("value");
@@ -28,8 +35,8 @@ public class BMICalculatorTest {
 
     @Test
     public void testOverweight1(){
-        open("https://healthunify.com/bmicalculator/");
-        $(By.name("wg")).sendKeys("65");
+        open(URL);
+        $(By.name("wg")).sendKeys(WEIGHT);
         $(By.name("ht")).sendKeys("148");
         $(By.name("cc")).click();
         String result = $(By.name("desc")).getAttribute("value");
@@ -38,8 +45,8 @@ public class BMICalculatorTest {
 
     @Test
     public void testOverweight2(){
-        open("https://healthunify.com/bmicalculator/");
-        $(By.name("wg")).sendKeys("65");
+        open(URL);
+        $(By.name("wg")).sendKeys(WEIGHT);
         $(By.name("ht")).sendKeys("161");
         $(By.name("cc")).click();
         String result = $(By.name("desc")).getAttribute("value");
@@ -48,8 +55,8 @@ public class BMICalculatorTest {
 
     @Test
     public void testNormal1(){
-        open("https://healthunify.com/bmicalculator/");
-        $(By.name("wg")).sendKeys("65");
+        open(URL);
+        $(By.name("wg")).sendKeys(WEIGHT);
         $(By.name("ht")).sendKeys("162");
         $(By.name("cc")).click();
         String result = $(By.name("desc")).getAttribute("value");
@@ -58,8 +65,8 @@ public class BMICalculatorTest {
 
     @Test
     public void testNormal2(){
-        open("https://healthunify.com/bmicalculator/");
-        $(By.name("wg")).sendKeys("65");
+        open(URL);
+        $(By.name("wg")).sendKeys(WEIGHT);
         $(By.name("ht")).sendKeys("187");
         $(By.name("cc")).click();
         String result = $(By.name("desc")).getAttribute("value");
@@ -67,8 +74,8 @@ public class BMICalculatorTest {
     }
     @Test
     public void testUnderweight1(){
-        open("https://healthunify.com/bmicalculator/");
-        $(By.name("wg")).sendKeys("65");
+        open(URL);
+        $(By.name("wg")).sendKeys(WEIGHT);
         $(By.name("ht")).sendKeys("188");
         $(By.name("cc")).click();
         String result = $(By.name("desc")).getAttribute("value");
@@ -76,8 +83,8 @@ public class BMICalculatorTest {
     }
     @Test
     public void testUnderweight2(){
-        open("https://healthunify.com/bmicalculator/");
-        $(By.name("wg")).sendKeys("65");
+        open(URL);
+        $(By.name("wg")).sendKeys(WEIGHT);
         $(By.name("ht")).sendKeys("208");
         $(By.name("cc")).click();
         String result = $(By.name("desc")).getAttribute("value");
@@ -86,8 +93,8 @@ public class BMICalculatorTest {
 
     @Test
     public void testStarvation1(){
-        open("https://healthunify.com/bmicalculator/");
-        $(By.name("wg")).sendKeys("65");
+        open(URL);
+        $(By.name("wg")).sendKeys(WEIGHT);
         $(By.name("ht")).sendKeys("209");
         $(By.name("cc")).click();
         String result = $(By.name("desc")).getAttribute("value");
